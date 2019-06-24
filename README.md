@@ -6,5 +6,18 @@ This is a small workflow to monitor the health endpoint of a microservice deploy
 
 ### Setup
 
+There are several steps to follow to configure the workflow:
+
+#### Define the environment parameters
+
+#### Check the /health endpoint
+
+#### Notify a Slack channel
+
+#### Create an alarm
+
+with the c8y action or node.js
+
+#### Repeat
 
 ### Execution
