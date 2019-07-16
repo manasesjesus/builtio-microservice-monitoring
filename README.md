@@ -22,11 +22,9 @@ Make sure to save the workflow when changes are made on the actions or parameter
 
 #### 1. Define the environment parameters
 
-Before adding actions to the workflow, the environment parameters shall be specified. Open the Workflow settings and add the following parameters (key/value pairs): username, password, server, microservice, trackerId.
+Before adding actions to the workflow, the environment parameters shall be specified. Open the **Workflow settings** and add the following parameters (key/value pairs): username, password, server, microservice, trackerId. These parameters will be used to configure the different actions in the workflow.
 
 ![workflow-parameters](/img/workflow-parameters.png)
-
-These parameters will be used to configure the different actions in the workflow.
 
 #### Check the /health endpoint
 
