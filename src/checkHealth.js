@@ -4,7 +4,7 @@ const request = require("request");
 const credentials = $config.params.username + ":" + $config.params.password;
 
 // Cumulocity microservice health endpoint (URL)
-const ms_endpoint = $config.params.tenantDomain + "/service/" + $config.params.microservice + "/health";
+const ms_endpoint = $config.params.server + "/service/" + $config.params.microservice + "/health";
 
 // Basic authorization
 const options = {
