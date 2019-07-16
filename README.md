@@ -17,8 +17,12 @@ Cumulocity microservices are server-side applications used to extend the platfor
 
 ### Setup
 
-There are several steps to follow to configure the workflow in Built.io.
+On the Built.io dashboard, create a blank workflow and follow the steps below to configure it.<br>
 Make sure to save the workflow when changes are made on the actions or parameters.
+
+Initially, the workflow will contain the trigger (left side) and the completion (right side) actions.
+
+![blank-workflow](/img/blank-workflow.png)
 
 #### 1. Define the environment parameters
 
@@ -26,7 +30,11 @@ Before adding actions to the workflow, the environment parameters shall be speci
 
 ![workflow-parameters](/img/workflow-parameters.png)
 
-#### Check the /health endpoint
+#### 2. Check the /health endpoint
+
+The first action to configure is to verify if a microservice is up and running. On the workflow dashboard's right side, search for the  **Node.js Code** action. It is not required to know JavaScript, but basic knowledge would be useful.
+
+Drap the action to the dashboard and bind it to the  
 
 #### Notify a Slack channel
 
