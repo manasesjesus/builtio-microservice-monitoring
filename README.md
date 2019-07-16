@@ -1,4 +1,4 @@
-## Monitor Cumulocity microservices using Built.io
+## Monitoring Cumulocity microservices using Built.io
 
 Third-party services can be employed to monitor microservices deployed in Cumulocity IoT. One cool tool to achieve such goal is [Built.io](https://www.built.io/).
 
@@ -32,9 +32,12 @@ Before adding actions to the workflow, the environment parameters shall be speci
 
 #### 2. Check the /health endpoint
 
-The first action to configure is to verify if a microservice is up and running. On the workflow dashboard's right side, search for the  **Node.js Code** action. It is not required to know JavaScript, but basic knowledge would be useful.
+The first action will verify if a microservice is up and running. On the workflow dashboard's right side, search for the  **Node.js Code** action. Drag the action to the dashboard and connect it to the trigger.
 
-Drap the action to the dashboard and bind it to the  
+Mouse-hovering an action displays the available options, i.e. settings, copy/delete action. Double click will open the settings of the action.
+
+Open the settings of the **Node.js Code** action and give it a label, e.g. *GET /microservice/health*.
+It is not required to know JavaScript, but basic knowledge would be useful.
 
 #### Notify a Slack channel
 
@@ -45,3 +48,5 @@ with the c8y action or node.js
 #### Repeat
 
 ### Execution
+
+Turn it on.
