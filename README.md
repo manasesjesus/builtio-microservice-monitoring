@@ -17,19 +17,22 @@ Cumulocity microservices are server-side applications used to extend the platfor
 
 ### Setup
 
-There are several steps to follow to configure the workflow.
+There are several steps to follow to configure the workflow in Built.io:
 
 <details>
-    <summary>**1. Define the environment parameters**</summary>
-    <p>Before adding actions to the workflow, the environment parameters shall be specified. Open the Workflow</p>
+    <summary><b>Define the environment parameters</b></summary>
+
+    Before adding actions to the workflow, the environment parameters shall be specified. Open the Workflow settings and add the following parameters (key/value pairs): username, password, server, microservice, trackerId.
+
+    These parameters will be used to configure the different actions in the workflow.
 </details>
 
 <details>
-    <summary></summary>
+    <summary><b>Check the /health endpoint</b></summary>
     <p></p>
 </details>
 
-#### Check the /health endpoint
+####
 
 #### Notify a Slack channel
 
