@@ -21,10 +21,13 @@ There are several steps to follow to configure the workflow in Built.io:
 
 <details>
     <summary><b>Define the environment parameters</b></summary>
+    <p style="margin:10px 17px">
+        Before adding actions to the workflow, the environment parameters shall be specified. Open the Workflow settings and add the following parameters (key/value pairs): username, password, server, microservice, trackerId.
 
-    Before adding actions to the workflow, the environment parameters shall be specified. Open the Workflow settings and add the following parameters (key/value pairs): username, password, server, microservice, trackerId.
+        ![workflow-parameters](/img/workflow-parameters.png)
 
-    These parameters will be used to configure the different actions in the workflow.
+        These parameters will be used to configure the different actions in the workflow.
+    </p>
 </details>
 
 <details>
