@@ -20,14 +20,14 @@ Cumulocity microservices are server-side applications used to extend the platfor
 There are several steps to follow to configure the workflow.
 
 <details>
-    <summary>1. Define the environment parameters</summary>
+    <summary>**1. Define the environment parameters**</summary>
     <p>Before adding actions to the workflow, the environment parameters shall be specified. Open the Workflow</p>
 </details>
 
-
-#### 1. Define the environment parameters
-
-
+<details>
+    <summary></summary>
+    <p></p>
+</details>
 
 #### Check the /health endpoint
 
