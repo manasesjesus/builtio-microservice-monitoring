@@ -13,7 +13,7 @@ This is a small workflow to monitor the health endpoint of a microservice deploy
 
 Cumulocity microservices are server-side applications used to extend the platform with specific functionality. Developers are not restricted to any specific tech stack, however, there are certain requirements that must be met. Review the [Microservice SDK guide](https://cumulocity.com/guides/microservice-sdk/introduction/) for more details.
 
-> **Note that trial accounts can be created for Built.io and Cumulocity.<br>Student accounts are also available.**
+> **Note that trial accounts can be created for Built.io and Cumulocity.<br>Accounts for students are also available.**
 
 ### Setup
 
@@ -46,11 +46,12 @@ Mouse-hovering an action displays the available options, i.e. settings, copy/del
 Open the settings of the **Node.js Code** action and give it a label, e.g. *GET /microservice/health*.
 It is not required to know JavaScript, but basic knowledge would be useful.
 
-On the code input, the action has to make a GET request on the health endpoint of the microservice and it requires basic authorization. The response will return a JSON object with the property `"status" : "UP"` if the microservice is up and running. Export this status to be available after the action is completed, so the next action will take the exported status as its input.
+On the code input, the action has to make a GET request on the health endpoint of the microservice and it requires basic authorization. The response will return a JSON object with the property `"status" : "UP"` if the microservice is up and running. Export this status to be available after the action is completed, so the next action will take it as its input.
 
 The code for this action can be found on the [checkHealth.js](src/checkHealth.js) file.
 
 #### 3. Notify a Slack channel
+
 
 
 #### 4. Create an alarm
