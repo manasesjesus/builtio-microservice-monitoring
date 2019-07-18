@@ -62,7 +62,9 @@ with the c8y action or node.js
 
 Configure the Trigger
 
-### Execution
+
+
+### Execution
 
 Turn it on. Start it.
 
