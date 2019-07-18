@@ -60,7 +60,13 @@ with the c8y action or node.js
 
 #### 5. Repeat
 
+Configure the Trigger
 
 ### Execution
 
-Turn it on.
+Turn it on. Start it.
+
+
+<hr>
+
+Contact us.
