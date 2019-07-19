@@ -39,18 +39,27 @@ These parameters will be used to configure the different actions in the workflow
 
 #### 2. Check the /health endpoint
 
-The first action will verify if a microservice is up and running. On the workflow dashboard's right side, search for the **Node.js Code** action. Drag the action to the dashboard and connect it to the trigger.
+The first action will verify if a microservice is up and running. On the workflow dashboard's right side, search for the **Node.js Code** action, drag it on the canvas and connect it to the trigger.
 
 Mouse-hovering an action displays the available options, i.e. settings, copy/delete action. Double click will open the settings of the action.
 
 Open the settings of the **Node.js Code** action and give it a label, e.g. *GET /microservice/health*.
 It is not required to know JavaScript, but basic knowledge would be useful.
 
-On the code input, the action has to make a GET request on the health endpoint of the microservice and it requires basic authorization. The response will return a JSON object with the property `"status" : "UP"` if the microservice is up and running. Export this status to be available after the action is completed, so the next action will take it as its input.
+On the code input, the action has to make a GET request on the health endpoint of the microservice and it requires basic authorization. The response will return a JSON object with the property `"status" : "UP"` if the microservice is up and running. Export this status to be available after the action completes, so the next action will take that status as its input. Give it a meaningful name, e.g. *healthy*.
 
 The code for this action can be found on the [checkHealth.js](src/checkHealth.js) file.
 
 #### 3. Notify a Slack channel
+
+As it can be seen, many actions can be configured to achieve different goals, e.g. a Slack action can be configured to notify a channel.
+Search for the **Post Message to Channel** action, drag it on the canvas and connect it to the previous action.
+
+Clicking the connection arrows also displays the available options. Open the setting of this connection to set a condition: if the microservice is not up, execute the Slack action. To achieve this, use as input the exported status from the previous action (i.e. *healthy*).
+
+![condition](/img/condition.png)
+
+
 
 
 
@@ -67,8 +76,3 @@ Configure the Trigger
 ### Execution
 
 Turn it on. Start it.
-
-
-<hr>
-
-Contact us.
