@@ -65,8 +65,6 @@ Configuring the **Post Message to Channel** action is straightforward and only r
 
 ![slack-config](/img/slack-config.png)
 
-
-
 #### 4. Create an alarm
 
 with the c8y action or node.js
