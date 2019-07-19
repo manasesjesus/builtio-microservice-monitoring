@@ -22,7 +22,7 @@ Make sure to save the workflow when changes are made on the actions or parameter
 
 Initially, the workflow will contain the **Trigger** (left side) and the **Completion** (right side) actions.
 
-![blank-workflow](/img/blank-workflow.png)
+![Blank workflow](/img/blank-workflow.png)
 
 #### 1. Define the environment parameters
 
@@ -35,7 +35,7 @@ Before adding actions to the workflow, the environment parameters shall be speci
 
 These parameters will be used to configure the different actions in the workflow.
 
-![workflow-parameters](/img/workflow-parameters.png)
+![Workflow parameters](/img/workflow-parameters.png)
 
 #### 2. Check the /health endpoint
 
@@ -57,7 +57,7 @@ Search for the **Post Message to Channel** action, drag it on the canvas and con
 
 Clicking the connection arrows also displays the available options. Open the setting of this connection to set a condition: if the microservice is not up, execute the Slack action. To achieve this, use as input the exported status from the previous action (i.e. *healthy*).
 
-![condition](/img/condition.png)
+![Condition](/img/condition.png)
 
 When the *GET /microservice/health* action completes it exports the *healthy* status, and the next actions will be executed only if the condition is met, i.e. if the microservice is not healthy.
 
@@ -67,7 +67,12 @@ Configuring the **Post Message to Channel** action is straightforward and only r
 
 #### 4. Create an alarm
 
-with the c8y action or node.js
+Different actions can be executed in parallel in the workflow. In this particular case, besides notifying a Slack channel also the Cumulocity tenant will be notified with an alarm. A Cumulocity alarm must be associated to a source and it requires a system ID.
+Search for the **Cumulocity New Alarm** action, drag it on the canvas and connect it to the previous action, i.e. *GET /microservice/health*.
+
+Configuring the alarm action is straightforward and only requires authorizing Cumulocity and specifying the details of the alarm, i.e. the ID of the managed object, a description of the alarm and its type. Cumulocity IoT is a very flexible platform and allows to define customized alarm types, e.g. *c8y_Application__Microservice_unhealthy*.
+
+![alarm](/img/alarm.png)
 
 #### 5. Repeat
 
