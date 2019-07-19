@@ -61,7 +61,7 @@ Clicking the connection arrows also displays the available options. Open the set
 
 When the *GET /microservice/health* action completes it exports the *healthy* status, and the next actions will be executed only if the condition is met, i.e. if the microservice is not healthy.
 
-Configuring the **Post Message to Channel** action is straightforward and only requires to specify the Slack credentials and the channel to be notified, e.g. a developers channel in charge of maintaining the microservice.
+Configuring the **Post Message to Channel** action is straightforward and only requires authorizing Slack, specifying the channel to be notified, e.g. a developers channel in charge of maintaining the microservice, and providing the message to be posted.
 
 ![slack-config](/img/slack-config.png)
 
