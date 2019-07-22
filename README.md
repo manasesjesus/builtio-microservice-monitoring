@@ -74,6 +74,8 @@ Configuring the alarm action is straightforward and only requires authorizing Cu
 
 ![alarm](/img/alarm.png)
 
+As this is a parallel action to be executed together with the Slack action, also set up the condition for this action to be executed only when the microservice is not healthy.
+
 #### 5. Repeat
 
 Configure the Trigger
