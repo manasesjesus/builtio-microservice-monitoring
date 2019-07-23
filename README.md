@@ -65,6 +65,8 @@ Configuring the **Post Message to Channel** action is straightforward and only r
 
 ![slack-config](/img/slack-config.png)
 
+Finally, connect this action to the **Completion** action.
+
 #### 4. Create an alarm
 
 Different actions can be executed in parallel in the workflow. In this particular case, besides notifying a Slack channel also the Cumulocity tenant will be notified with an alarm. A Cumulocity alarm must be associated to a source and it requires a system ID.
@@ -78,13 +80,16 @@ As this is a parallel action to be executed together with the Slack action from 
 
 Note that this action is for tenants in a production environment, i.e. hosted in [cumulocity.com](https://cumulocity.com/try-for-free/). For staging or test servers, it is possible to create an alarm using the [Cumulocity REST interface](https://cumulocity.com/guides/microservice-sdk/rest/); in such case, a **Node.js Code** action would be required. The code for such action can be found in the [createAlarm.js](src/createAlarm.js) file.
 
+Finally, also connect this action to the **Completion** action.
 
 #### 5. Repeat
 
-Configure the Trigger
+The workflow can be started automatically based on certain condition. Open the settings of the **Trigger** action and search for **Clock**. Set it up to be executed every 10 minutes. Eventually it should look similar to:
 
+![Workflow](/img/workflow.png)
 
+This workflow runs daily and checks every 10 minutes if a microservice is up and running. In case the microservice is temporarily down during the check, e.g. it's being restarted by the system, an alarm would be created.
 
 ### Execution
 
-Turn it on. Start it.
+Once the workflow is ready, it can be started manually. On the top-right toolbar, turn it on and click the start button.
