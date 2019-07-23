@@ -1,4 +1,5 @@
 const request = require("request");
+
 // Cumulocity credentials
 const credentials = $config.params.username + ":" + $config.params.password;
 
