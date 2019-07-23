@@ -48,7 +48,7 @@ It is not required to know JavaScript, but basic knowledge would be useful.
 
 On the code input, the action has to make a GET request on the health endpoint of the microservice and it requires basic authorization. The response will return a JSON object with the property `"status" : "UP"` if the microservice is up and running. Export this status to be available after the action completes, so the next action will take that status as its input. Give it a meaningful name, e.g. *healthy*.
 
-The code for this action can be found on the [checkHealth.js](src/checkHealth.js) file.
+The code for this action can be found in the [checkHealth.js](src/checkHealth.js) file.
 
 #### 3. Notify a Slack channel
 
@@ -75,6 +75,9 @@ Configuring the alarm action is straightforward and only requires authorizing Cu
 ![alarm](/img/alarm.png)
 
 As this is a parallel action to be executed together with the Slack action from the previous, set up the condition for this action to be executed only when the microservice is not healthy.
+
+Note that this action is for tenants in a production environment, i.e. hosted in [cumulocity.com](https://cumulocity.com/try-for-free/). For staging or test servers, it is possible to create an alarm using the [Cumulocity REST interface](https://cumulocity.com/guides/microservice-sdk/rest/); in such case, a **Node.js Code** action would be required. The code for such action can be found in the [createAlarm.js](src/createAlarm.js) file.
+
 
 #### 5. Repeat
 
