@@ -1,6 +1,8 @@
 const request = require("request");
-
+// Cumulocity credentials
 const credentials = $config.params.username + ":" + $config.params.password;
+
+// Basic authorization and alarm details
 const options = {
     "url" : $config.params.server + "/alarm/alarms",
     "headers" : {
@@ -19,10 +21,9 @@ const options = {
     }
 };
 
+// Create the alarm
 request.post(options, function (error, response, body) {
-    
     if (body.id !== undefined) {
         $export(null, { "alarmId" : body.id });
     }
-    
 });
