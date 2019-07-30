@@ -13,8 +13,6 @@ This is a small workflow to monitor the health endpoint of a microservice deploy
 
 Cumulocity microservices are server-side applications used to extend the platform with specific functionality. Developers are not restricted to any specific tech stack, however, there are certain requirements that must be met. Review the [Microservice SDK guide](https://cumulocity.com/guides/microservice-sdk/introduction/) for more details.
 
-> **Note that trial accounts can be created for Built.io and Cumulocity.<br>Accounts for students are also available.**
-
 ### Setup
 
 On the Built.io dashboard, create a blank workflow and follow the steps below to configure it.<br>
