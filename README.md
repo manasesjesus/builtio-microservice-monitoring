@@ -11,14 +11,14 @@ This is a small workflow to monitor the health endpoint of a microservice deploy
 *   Cumulocity credentials, i.e. a tenant, username and password.
 *   A Cumulocity microservice deployed and subscribed to the tenant.
 
-Cumulocity microservices are server-side applications used to extend the platform with specific functionality. Developers are not restricted to any specific tech stack, however, there are certain requirements that must be met. Review the [Microservice SDK guide](https://cumulocity.com/guides/microservice-sdk/introduction/) for more details.
+Cumulocity microservices are server-side applications used to extend the platform with specific functionality and developers are not restricted to any specific tech stack. However, there are certain requirements that must be met. Review the [Microservice SDK guide](https://cumulocity.com/guides/microservice-sdk/introduction/) for more details.
 
 ### Setup
 
 On the Built.io dashboard, create a blank workflow and follow the steps below to configure it.<br>
 Make sure to save the workflow when changes are made on the actions or parameters.
 
-Initially, the workflow will contain the **Trigger** (left side) and the **Completion** (right side) actions.
+Initially and as seen on the following image, the workflow will contain the **Trigger** (left side) and the **Completion** (right side) actions.
 
 ![Blank workflow](/img/blank-workflow.png)
 
