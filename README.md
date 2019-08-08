@@ -24,7 +24,7 @@ Initially and as seen on the following image, the workflow will contain the **Tr
 
 #### 1. Define the environment parameters
 
-Before adding actions to the workflow, the environment parameters shall be specified. Open the **Workflow settings** and add the following parameters (key/value pairs):
+Before adding actions to the workflow, the environment parameters must be specified. Open the **Workflow settings** and add the following parameters (key/value pairs):
 
 *   username, password - Cumulocity credentials
 *   server - Cumulocity tenant domain (URL)
