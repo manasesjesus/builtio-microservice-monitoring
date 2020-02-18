@@ -1,17 +1,17 @@
-## Monitoring Cumulocity microservices using Built.io Flow
+## Monitoring Cumulocity IoT microservices using Built.io Flow
 
 Third-party services can be employed to monitor microservices deployed in Cumulocity IoT. One cool tool to achieve such goal is [Built.io Flow](https://www.built.io/).
 
-This is a small workflow to monitor the health endpoint of a microservice deployed in the Cumulocity IoT platform. If the microservice is not up and running, Built.io will notify a Slack channel and create an alarm in Cumulocity.
+This is a small workflow to monitor the health endpoint of a microservice deployed in the Cumulocity IoT platform. If the microservice is not up and running, Built.io will notify a Slack channel and create an alarm in Cumulocity IoT.
 
 ### Prerequisites
 
 *   Built.io credentials.
 *   Slack channel to post messages to, [Slack app and OAuth token](https://slack.dev/node-slack-sdk/getting-started).
-*   Cumulocity credentials, i.e. a tenant, username and password.
-*   A Cumulocity microservice deployed and subscribed to the tenant.
+*   Cumulocity IoT credentials, i.e. a tenant, username and password.
+*   A Cumulocity IoT microservice deployed and subscribed to the tenant.
 
-Cumulocity microservices are server-side applications used to extend the platform with specific functionality and developers are not restricted to any specific tech stack. However, there are certain requirements that must be met. Review the [Microservice SDK guide](https://cumulocity.com/guides/microservice-sdk/introduction/) for more details.
+Cumulocity IoT microservices are server-side applications used to extend the platform with specific functionality and developers are not restricted to any specific tech stack. However, there are certain requirements that must be met. Review the [Microservice SDK guide](https://cumulocity.com/guides/microservice-sdk/introduction/) for more details.
 
 ### Setup
 
@@ -26,8 +26,8 @@ Initially and as seen on the following image, the workflow will contain the **Tr
 
 Before adding actions to the workflow, the environment parameters must be specified. Open the **Workflow settings** and add the following parameters (key/value pairs):
 
-*   username, password - Cumulocity credentials
-*   server - Cumulocity tenant domain (URL)
+*   username, password - Cumulocity IoT credentials
+*   server - Cumulocity IoT tenant domain (URL)
 *   microservice - Name of the microservice to monitor
 *   trackerId - The ID of a managed object (e.g. 1234)
 
@@ -67,16 +67,16 @@ Finally, connect this action to the **Completion** action.
 
 #### 4. Create an alarm
 
-Different actions can be executed in parallel in the workflow. In this particular case, besides notifying a Slack channel also the Cumulocity tenant will be notified with an alarm. A Cumulocity alarm must be associated to a source and it requires a system ID.
-Search for the **Cumulocity New Alarm** action, drag it on the canvas and connect it to the previous action, i.e. *GET /microservice/health*.
+Different actions can be executed in parallel in the workflow. In this particular case, besides notifying a Slack channel also the Cumulocity IoT tenant will be notified with an alarm. A Cumulocity IoT alarm must be associated to a source and it requires a system ID.
+Search for the **Cumulocity IoT New Alarm** action, drag it on the canvas and connect it to the previous action, i.e. *GET /microservice/health*.
 
-Configuring the alarm action is straightforward and only requires authorizing Cumulocity and specifying the details of the alarm, i.e. the ID of the managed object, a description of the alarm and its type. Cumulocity IoT is a very flexible platform and allows to define customized alarm types, e.g. *c8y_Application__Microservice_unhealthy*.
+Configuring the alarm action is straightforward and only requires authorizing Cumulocity IoT and specifying the details of the alarm, i.e. the ID of the managed object, a description of the alarm and its type. Cumulocity IoT is a very flexible platform and allows to define customized alarm types, e.g. *c8y_Application__Microservice_unhealthy*.
 
 ![alarm](/img/alarm.png)
 
 As this is a parallel action to be executed together with the Slack action from the previous step, set up the condition for this action to be executed only when the microservice is not healthy.
 
-Note that this action is for tenants in a production environment, i.e. hosted in [cumulocity.com](https://cumulocity.com/try-for-free/). For staging or test servers, it is possible to create an alarm using the [Cumulocity REST interface](https://cumulocity.com/guides/microservice-sdk/rest/); in such case, a **Node.js Code** action would be required. The code for such action can be found in the [createAlarm.js](src/createAlarm.js) file.
+Note that this action is for tenants in a production environment, i.e. hosted in [cumulocity.com](https://cumulocity.com/try-for-free/). For staging or test servers, it is possible to create an alarm using the [Cumulocity IoT REST interface](https://cumulocity.com/guides/microservice-sdk/rest/); in such case, a **Node.js Code** action would be required. The code for such action can be found in the [createAlarm.js](src/createAlarm.js) file.
 
 Finally, also connect this action to the **Completion** action.
 
